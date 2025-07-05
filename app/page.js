@@ -9,9 +9,9 @@ export default function Home() {
   const descriptionRef = useRef(null);
 
   useEffect(() => {
-    const todoStorage = JSON.parse(localStorage.getItem("todos"));
-    console.log("after parsing: ", JSON.parse(localStorage.getItem("todos")));
-    setTodos(todoStorage);
+    // const todoStorage = JSON.parse(localStorage.getItem("todos"));
+    // console.log("after parsing: ", JSON.parse(localStorage.getItem("todos")));
+    // setTodos(todoStorage);
   }, []);
   const addTodo = (e) => {
     e.preventDefault();
@@ -24,7 +24,7 @@ export default function Home() {
       description: description,
     };
     setTodos((prev) => [...prev, todosAdded]);
-    localStorage.setItem("todos", JSON.stringify([...todos, todosAdded]));
+    // localStorage.setItem("todos", JSON.stringify([...todos, todosAdded]));
     setTitle("");
     setDescription("");
   };
@@ -34,7 +34,7 @@ export default function Home() {
       let newTodos = prev.filter((item, index) => {
         return item.title !== title;
       });
-      localStorage.setItem("todos", JSON.stringify(newTodos));
+      // localStorage.setItem("todos", JSON.stringify(newTodos));
       return newTodos;
     });
   };
